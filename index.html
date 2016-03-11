@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>  Práctica DIW  </title>
     <!-- NOS HEMOS DECANTADO POR UTILIZAR EL CDN DE BOOSTRAP -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="jquery2.min.js"></script>
+
+    
     <style type="text/css">
     .titulo{
 
@@ -52,20 +51,20 @@
                         </li>
                         
                         <li>
-                            <a href="#"><img src="picture.png">
+                            <a id="btngaleria"><img src="picture.png">
                         </li>
                         <li>
                             Galeria</a>
                         </li>
                         <li>
-                           <a href="#"> <img src="secciones.png">
+                           <a id="btnsecciones"> <img src="secciones.png">
                         </li>
                         <li>
                             Secciones</a>
                         </li>      
 
                         <li>
-                            <a href=""><img src="carrusel.png">
+                            <a id="btncarrusel"><img src="carrusel.png">
                         </li>
                     
                         <li>  
@@ -73,14 +72,14 @@
                         </li>                                                                 
            
                         <li>
-                            <a href=""> <img src="about.png">
+                            <a id="sobre"> <img src="about.png">
                         </li>
                         <li>
                             Quienes somos</a>
                         </li>
         
                         <li>
-                            <a href=""> <img src="registro.png">
+                            <a id="registro"> <img src="registro.png">
                         </li>
                         <li>
                             Registro</a>
@@ -94,6 +93,7 @@
         <!-- AQUI TERMINA EL MENU SUPERIOR DE NAVEGACION -->
         <!-- ABRIMOS UN HEADER PARA UTILIZARLO COMO PRESENTACION DE NUESTRA PAGINA ES DECIR UNA CABEZERA -->
         <hr>
+        <div id="aqui"></div> <!-- IDENTIFICADOR PARA SUBIR ARRIVA  -->
          <div class="container">
             <div class="row">
                 <div class="col-md-6"> <!-- LOGO -->
@@ -104,13 +104,28 @@
             <header class="jumbotron hero-spacer">
                 <h1 id="titulo">Bienvenido!</h1>
                 <p class="p">Tan solo por la educación puede el hombre llegar a ser hombre. El hombre no es más que lo que la educación hace de él.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Immanuel Kant.</p>
-                <p><a class="btn btn-primary btn-large" id="des">Ver catálogo!</a></p> 
+                
 
                 <script type="text/javascript">
-                    $("#des").click(function () {
+                $(document).ready(function(){
+                    $("#top").click(function () {
                         var posicion = $("#aqui").offset().top;
                         $("html, body").animate({scrollTop: posicion});
+
                     });
+                    $("#btngaleria").click(function(){
+                        var pos = $("#galeria").offset().top;
+                       $("html, body").animate({scrollTop: pos});
+                    });
+                    $("#btnsecciones").click(function(){
+                        var posi = $("#secciones").offset().top;
+                        $("html, body").animate({scrollTop: posi});
+                    });
+                    $("#btncarrusel").click(function(){
+                        var posi = $("#carrusel").offset().top;
+                        $("html, body").animate({scrollTop: posi});
+                    });
+                });
                 </script>
             </div>
             </header>
@@ -118,11 +133,11 @@
             <hr>
         
         <!-- AQUI COMIENZA LA GALAERIA -->
-        <center><h2 class="titulo" id="galeria"> Galería <h2></center>
+        <center><h2 class="titulo" id="secciones"> Secciones <h2></center>
         
         <div class="row text-center">
             <!-- PRIMER ELEMENTO DE LA GALERIA -->
-                <div class="col-md-3 col-sm-2 col-xs-1 hero-feature">
+                <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
                     <div class="thumbnail">
                         <span class="help-block" id="titulo">KiteSurf</span>
                         <img  class="img-rounded"  src="kitesurf.jpg" class="img-responsive" alt="">
@@ -134,7 +149,7 @@
                     </div>
                 </div>
             <!-- SEGUNDO ELEMENTO -->
-                <div class="col-md-3 col-sm-2 col-xs-1 hero-feature">
+                <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
                     <div class="thumbnail">
                         <span class="help-block" id="titulo">KiteSurf</span>
                         <img  class="img-rounded"  src="kitesurf.jpg" class="img-responsive" alt="">
@@ -147,7 +162,7 @@
                 </div>
 
                  <!-- SEGUNDO ELEMENTO -->
-                <div class="col-md-3 col-sm-2 col-xs-1 hero-feature">
+                <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
                     <div class="thumbnail">
                         <span class="help-block" id="titulo">KiteSurf</span>
                         <img  class="img-rounded"  src="kitesurf.jpg" class="img-responsive" alt="">
@@ -160,7 +175,7 @@
                 </div>
 
                  <!-- SEGUNDO ELEMENTO -->
-                <div class="col-md-3 col-sm-2 col-xs-1 hero-feature">
+                <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
                     <div class="thumbnail">
                         <span class="help-block" id="titulo">KiteSurf</span>
                         <img  class="img-rounded"  src="kitesurf.jpg" class="img-responsive" alt="">
@@ -174,11 +189,197 @@
         
             </div><!-- SEPARAMOS LA GALERIA DE LAS SECCIONES CON UN HR -->
                         <hr>
-                        <p><a class="btn btn-primary btn-large" id="des2">Ver catálogo!</a>
-                </p> 
+                 <!-- GALERIA -->       
+                <center><h2 class="titulo" id="galeria"> Galeria <h2></center>
+   <!-- row galeria -->
+
+        <div class="row text-center">
+                <!-- PRIMER PANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Pesca Submarina</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="submarina.jpg"> <img src="submarina.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div> 
+
+                <!-- SEGUNDO PANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Pesca Submarina</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="submarina.jpg"><img src="submarina.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>  
+                <!-- TERCER PANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Pesca Submarina</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="submarina.jpg"><img src="submarina.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>  
+                <!-- CUARTOPANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Pesca Submarina</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="submarina.jpg"><img src="submarina.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>
+                <!-- PRIMER PANEÑ -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Surfcasting</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="surfcasting.jpg"> <img src="surfcasting.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div> 
+
+                <!-- SEGUNDO PANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Surfcasting</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="surfcasting.jpg"><img src="surfcasting.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>  
+                <!-- TERCER PANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Surfcasting</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="surfcasting.jpg"><img src="surfcasting.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>  
+                <!-- CUARTOPANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Surfcasting</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="surfcasting.jpg"><img src="surfcasting.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>     
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Esqui Acuatico</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="esqui.jpg"> <img src="esqui.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div> 
+
+                <!-- SEGUNDO PANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Esqui Acuatico</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="esqui.jpg"><img src="esqui.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>  
+                <!-- TERCER PANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Esqui Acuatico</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="esqui.jpg"><img src="esqui.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>  
+                <!-- CUARTOPANEL -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Esqui Acuatico</h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="esqui.jpg"><img src="esqui.jpg" class="img-responsive" ></a>
+                      </div>
+                    </div>
+                </div>                          
+   <!--fin row galeria-->
+        </div>
+            <hr>
+             <center><h2 class="titulo" id="carrusel"> Carrusel<h2></center>
+    <!-- CARRUSEL -->   
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active" align="center">
+                        <img width="450" height="150" src="optimus.jpg" alt="Chania" >
+                    </div>
+
+                    <div class="item" align="center">
+                        <img width="450" height="150" src="vela.jpg" alt="Chania">
+                    </div>
+
+                    <div class="item" align="center">
+                        <img  width="450" height="150" src="fly.jpeg" alt="Flower">
+                    </div>
+
+                    <div class="item" align="center">
+                        <img  width="450" height="150" src="vela.jpg" alt="Flower">
+                    </div>
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div> 
+     <!-- FIN CARRUSEL -->                 
+                        <hr>
+                       <center> <p><a class="btn btn-primary btn-large" id="subir">Subir al cielo!</a>
+                </p> </center>
 
                 <script type="text/javascript">
-                    $("#des2").click(function () {
+                    $("#subir").click(function () {
                         $('body,html').animate({scrollTop: 0}, 500);
                     });
                 </script>
